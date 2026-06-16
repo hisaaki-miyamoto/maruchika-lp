@@ -1,0 +1,14 @@
+# GA4 サービスアカウント鍵（絶対にコミットしない）
+tools/secrets/
+*-sa.json
+*service-account*.json
+
+# 生成物・キャッシュ
+tools/reports/
+reports/
+__pycache__/
+*.pyc
+
+# OS
+.DS_Store
+Thumbs.db

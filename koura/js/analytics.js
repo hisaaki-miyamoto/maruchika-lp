@@ -1,22 +1,18 @@
 /* ===================================================================
-   GA4 計測（A/Bテスト用）  -  analytics.js
-   ・A案(kani-koura.html)とB案(kani-koura-light.html)を1ファイルで計測
-   ・page_path で自動的にA/Bを区別＋ ab_variant パラメータも付与
+   GA4 アクセス計測  -  analytics.js
+   ・ページビュー（アクセス数：セッション/ユーザー/PV）を計測
    ・「丸近 公式オンラインショップ(kani-mrck.com)」への遷移を cta_click として計測
-   ・購入の完了は別ドメイン(MakeShop)で起きるため、LP側の成果は「CTAクリック」で測る
 
-   ★使い方：下の GA4_MEASUREMENT_ID を、GA4の測定ID（G-から始まる文字列）に書き換えるだけ。
+   ★使い方：下の GA4_MEASUREMENT_ID を、GA4の測定ID（G-から始まる文字列）に
+            書き換えるだけで計測が始まります。
 =================================================================== */
 (function () {
   "use strict";
 
   var GA4_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← ここをGA4の測定IDに書き換えてください
 
-  // IDが未設定（プレースホルダーのまま）なら何もしない（開発時の誤計測・エラー防止）
+  // IDが未設定（プレースホルダーのまま）なら何もしない（誤計測・エラー防止）
   if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID.indexOf("XXXX") !== -1) return;
-
-  // A案/B案の判定（ファイル名に "light" が含まれればB案）
-  var variant = location.pathname.indexOf("light") !== -1 ? "B_light" : "A_dark";
 
   // gtag.js を読み込み
   var s = document.createElement("script");
@@ -29,9 +25,7 @@
   window.gtag = gtag;
 
   gtag("js", new Date());
-  gtag("config", GA4_MEASUREMENT_ID, { ab_variant: variant });
-  // ページ表示イベント（A/B別に集計しやすいよう変数を付与）
-  gtag("event", "lp_view", { ab_variant: variant });
+  gtag("config", GA4_MEASUREMENT_ID); // ページビュー（アクセス数）を自動計測
 
   // 購入ボタン（kani-mrck.com への遷移）クリックを計測
   document.addEventListener(
@@ -47,11 +41,7 @@
         : a.closest(".lp-hero")
         ? "hero"
         : "other";
-      gtag("event", "cta_click", {
-        ab_variant: variant,
-        cta_location: place,
-        link_url: a.href
-      });
+      gtag("event", "cta_click", { cta_location: place, link_url: a.href });
     },
     true
   );
