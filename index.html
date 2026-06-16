@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>株式会社 丸近｜ランディングページ一覧</title>
+<meta name="robots" content="noindex, follow" />
+<link rel="icon" href="koura/images/lp/favicon-emblem.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="koura/images/lp/favicon-emblem-32.png" />
+<link rel="apple-touch-icon" href="koura/images/lp/apple-touch-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{ --ink:#2b2620; --muted:#8c8374; --gold:#b3893f; --line:#e8dfce; --paper:#fcfaf5; }
+  *{ box-sizing:border-box; }
+  body{ margin:0; background:var(--paper); color:var(--ink); font-family:"Noto Sans JP",system-ui,sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:680px; margin:0 auto; padding:clamp(48px,10vw,96px) 22px; }
+  .brand{ display:flex; align-items:center; gap:10px; justify-content:center; margin-bottom:8px; }
+  .brand img{ height:46px; width:auto; }
+  .brand b{ font-family:"Shippori Mincho",serif; font-weight:700; color:var(--gold); font-size:15px; letter-spacing:.06em; }
+  h1{ font-family:"Shippori Mincho",serif; font-weight:700; text-align:center; font-size:clamp(18px,3vw,24px); letter-spacing:.08em; margin:18px 0 6px; }
+  .lead{ text-align:center; color:var(--muted); font-size:13px; margin:0 0 36px; }
+  .card{ display:flex; align-items:center; gap:18px; text-decoration:none; color:inherit;
+         border:1px solid var(--line); border-radius:14px; padding:16px 18px; background:#fff;
+         box-shadow:0 12px 30px rgba(43,38,32,.06); transition:transform .25s ease, box-shadow .25s ease; }
+  .card:hover{ transform:translateY(-3px); box-shadow:0 18px 40px rgba(43,38,32,.12); }
+  .card img{ width:84px; height:84px; object-fit:contain; flex:0 0 auto; }
+  .card .t{ font-family:"Shippori Mincho",serif; font-weight:700; font-size:16px; letter-spacing:.04em; margin-bottom:4px; }
+  .card .d{ font-size:12.5px; color:var(--muted); line-height:1.7; }
+  .card .go{ margin-left:auto; color:var(--gold); font-weight:700; flex:0 0 auto; }
+  footer{ text-align:center; color:var(--muted); font-size:11px; margin-top:40px; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="brand">
+      <img src="koura/images/lp/maruchika-emblem.png" alt="株式会社 丸近" />
+      <b>株式会社 丸近｜【公式】</b>
+    </div>
+    <h1>ランディングページ一覧</h1>
+    <p class="lead">商品特設ページの一覧です。</p>
+
+    <a class="card" href="koura/">
+      <img src="koura/images/lp/hero-crab-soft.webp" alt="甲羅盛り 香箱造り" />
+      <span>
+        <span class="t">国産ベニズワイガニ 甲羅盛り 香箱造り</span>
+        <span class="d">かに身と味噌を丸々一杯分、甲羅に盛り付け。数量限定50セット。</span>
+      </span>
+      <span class="go" aria-hidden="true">→</span>
+    </a>
+
+    <footer>© 2026　株式会社 丸近</footer>
+  </div>
+</body>
+</html>
