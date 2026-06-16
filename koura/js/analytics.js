@@ -9,7 +9,7 @@
 (function () {
   "use strict";
 
-  var GA4_MEASUREMENT_ID = "G-XXXXXXXXXX"; // ← ここをGA4の測定IDに書き換えてください
+  var GA4_MEASUREMENT_ID = "G-M81PY5TNWF"; // GA4 測定ID（丸近LP）
 
   // IDが未設定（プレースホルダーのまま）なら何もしない（誤計測・エラー防止）
   if (!GA4_MEASUREMENT_ID || GA4_MEASUREMENT_ID.indexOf("XXXX") !== -1) return;
