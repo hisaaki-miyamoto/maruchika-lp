@@ -74,6 +74,12 @@ header.site.scrolled{ background:rgba(255,255,255,.95); box-shadow:0 1px 0 var(-
 header.site.scrolled nav a{ color:var(--w-head); }
 .nav-toggle span,
 header.site.scrolled .nav-toggle span{ background:var(--w-head) !important; }
+/* モバイル：ハンバーガーメニュー（濃紺カード）展開時は白文字＋白い×アイコン */
+@media (max-width:768px){
+  header.site nav a,
+  header.site.scrolled nav a{ color:#fff; }
+}
+header.site.nav-open .nav-toggle span{ background:#fff !important; }
 
 /* ボタン（朱色） */
 .btn--primary{ background:linear-gradient(180deg,#c43a2d,#b3261d 60%,#9c1f17); color:#fff; font-weight:700; border:1px solid #d6493d; box-shadow:0 12px 26px rgba(168,30,21,.26); }
