@@ -7,8 +7,14 @@
 <meta name="description" content="香住ガニ かに身セット（むき身600g・かに味噌・かに酢付き）。殻むき不要、開けてそのまま。税込6,800円・冷蔵便。" />
 <meta property="og:title" content="香住ガニ かに身セット｜むき身600g・かに味噌・かに酢付き" />
 <meta property="og:image" content="images/lp/kanimi_image_lp.jpg" />
+<link rel="icon" href="images/lp/favicon-emblem.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/lp/favicon-emblem-32.png" />
+<link rel="apple-touch-icon" href="images/lp/apple-touch-emblem.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@600;700&display=swap" rel="stylesheet" />
 <style>
-  :root{ --bg:#efe9df; }
+  :root{ --bg:#efe9df; --gold-dp:#8c6a28; --muted:#8c8374; --line:#e8dfce; }
   *{ margin:0; padding:0; box-sizing:border-box; }
   html,body{ background:var(--bg); }
   body{
@@ -17,7 +23,25 @@
   }
   /* 画像LPの基準幅は750px。PCでは中央寄せ、スマホでは画面幅いっぱいに自動縮小 */
   .lp{ width:100%; max-width:750px; background:#faf6ee; box-shadow:0 0 40px rgba(0,0,0,.12); }
-  .lp img{ display:block; width:100%; height:auto; }
+  .lp-main{ display:block; width:100%; height:auto; }
+
+  /* 最上段ヘッダー（エンブレム＋社名） */
+  .lp-head{
+    display:flex; align-items:center; gap:10px;
+    padding:12px clamp(14px,3.5vw,20px);
+    background:#fff; border-bottom:1px solid var(--line);
+  }
+  .lp-head img{ height:clamp(36px,6vw,44px); width:auto; display:block; }
+  .lp-head span{
+    font-family:"Shippori Mincho", serif; font-weight:700; color:var(--gold-dp);
+    font-size:clamp(12.5px,3.4vw,15px); letter-spacing:.05em; white-space:nowrap;
+  }
+
+  /* 最下段フッター（wordmark＋コピーライト・中央揃え） */
+  /* 下部余白は、追従ボタンがロゴ・コピーライトに重ならないよう広めに確保 */
+  .lp-foot{ text-align:center; padding:clamp(26px,5vw,38px) 16px clamp(120px,18vw,150px); background:#faf6ee; }
+  .lp-foot img{ height:clamp(34px,7vw,46px); width:auto; display:block; margin:0 auto 14px; }
+  .lp-foot p{ font-family:"Shippori Mincho", serif; color:var(--muted); font-size:12px; letter-spacing:.08em; }
 
   /* 右下に常に追従する購入ボタン（フローティングCTA） */
   .float-cta{
@@ -46,9 +70,22 @@
 </head>
 <body>
   <div class="lp">
-    <img src="images/lp/kanimi_image_lp.jpg"
+    <!-- 最上段：ブランドヘッダー -->
+    <header class="lp-head">
+      <img src="images/lp/maruchika-emblem.png" alt="株式会社 丸近" width="500" height="500" decoding="async" />
+      <span>株式会社丸近｜【公式サイト】</span>
+    </header>
+
+    <!-- 縦長画像LP本体 -->
+    <img class="lp-main" src="images/lp/kanimi_image_lp.jpg"
          alt="香住ガニ かに身セット むき身600g（300g×2パック）かに味噌・かに酢付き 税込6,800円"
-         width="750" height="4622" decoding="async" />
+         width="750" height="6245" decoding="async" />
+
+    <!-- 最下段：wordmarkロゴ＋コピーライト（中央揃え） -->
+    <footer class="lp-foot">
+      <img src="images/lp/maruchika-wordmark.png" alt="株式会社 丸近" width="550" height="200" decoding="async" />
+      <p>© 2026　株式会社 丸近</p>
+    </footer>
   </div>
 
   <!-- 右下に追従する購入ボタン -->
