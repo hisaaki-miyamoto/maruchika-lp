@@ -34,7 +34,9 @@
       var t = e.target;
       var a = t && t.closest ? t.closest('a[href*="kani-mrck.com"]') : null;
       if (!a) return;
-      var place = a.closest(".lp-sticky")
+      var place = a.closest(".float-cta")
+        ? "float"
+        : a.closest(".lp-sticky")
         ? "sticky"
         : a.closest(".lp-final")
         ? "final"
