@@ -320,6 +320,13 @@ a{ color:inherit; text-decoration:none; }
 .band__big::after{ content:"\201D"; color:var(--c-yolk); font-size:1.3em; margin-left:.1em; }
 .band__note{ font-size:15px; margin:24px auto 0; max-width:680px; opacity:.92; line-height:1.9; }
 
+/* FOMO band: same look as band--quote, different photo */
+.band--fomo{
+  background:
+    linear-gradient(rgba(13,43,74,.78), rgba(13,43,74,.85)),
+    url("photo/4.jpeg") center/cover no-repeat;
+}
+
 /* ============================== EATS */
 .eats{
   padding:90px 24px;
