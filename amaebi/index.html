@@ -320,5 +320,25 @@
   <span class="float-cta__main">公式ショップで購入する →</span>
 </a>
 
+<!-- FLOATING UTILITIES (back-to-top + purchase) -->
+<div class="float-tools" id="floatTools">
+  <button class="float-tools__top" id="backToTop" type="button" aria-label="ページの上に戻る">↑</button>
+  <a href="#cta" class="float-tools__buy">
+    <span>購入はコチラ</span>
+    <span class="float-tools__buy-arrow" aria-hidden="true">→</span>
+  </a>
+</div>
+<script>
+  (function(){
+    var tools = document.getElementById('floatTools');
+    var btt = document.getElementById('backToTop');
+    if(!tools || !btt) return;
+    btt.addEventListener('click', function(){ window.scrollTo({top:0, behavior:'smooth'}); });
+    function update(){ tools.classList.toggle('is-visible', window.scrollY > 400); }
+    window.addEventListener('scroll', update, {passive:true});
+    update();
+  })();
+</script>
+
 </body>
 </html>
