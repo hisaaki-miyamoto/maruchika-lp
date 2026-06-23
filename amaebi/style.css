@@ -369,6 +369,31 @@ a{ color:inherit; text-decoration:none; }
   object-fit:cover;
   display:block;
 }
+.eat__glint{
+  position:absolute;
+  /* キラッ位置（卵黄の上、現ハイライトの少し左） */
+  left:53%; top:30%;
+  /* サイズ */
+  width:18%; aspect-ratio:1/1;
+  border-radius:50%;
+  background:radial-gradient(circle at center,
+    rgba(255,255,255,1) 0%,
+    rgba(255,255,255,.95) 10%,
+    rgba(255,255,255,.7) 30%,
+    rgba(255,255,255,.25) 55%,
+    rgba(255,255,255,0) 80%);
+  filter:blur(.5px);
+  pointer-events:none;
+  opacity:0;
+  transform:translate(-50%,-50%) scale(.6);
+  animation:eatGlint 10s ease-in-out infinite;
+}
+@keyframes eatGlint{
+  0%, 90% { opacity:0; transform:translate(-50%,-50%) scale(.6); }
+  92%     { opacity:1; transform:translate(-50%,-50%) scale(1.15); }
+  95%     { opacity:1; transform:translate(-50%,-50%) scale(1); }
+  100%    { opacity:0; transform:translate(-50%,-50%) scale(.9); }
+}
 .eat figcaption{ padding:18px 18px 22px; }
 .eat__num{
   display:inline-block;
